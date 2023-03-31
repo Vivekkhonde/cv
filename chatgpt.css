@@ -1,0 +1,76 @@
+.graph-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .graph {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin-top: 30px;
+    background-color: #f0f0f0;
+  }
+  
+  .slider-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 10px auto;
+  }
+  
+  #investment-amount {
+    width: 100%;
+  }
+  
+  #investment-amount-value {
+    font-weight: bold;
+  }
+  
+  .graph-bars {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0 20px;
+  }
+  
+  .graph-bar {
+    width: calc(100% / 4 - 20px);
+    height: 0;
+    position: relative;
+    margin-bottom: 30px;
+    background-color: #00aaff;
+    transition: height 0.5s ease;
+  }
+  
+  .graph-bar:before {
+    content: attr(data-years) " Years";
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  /* Adjust the height of each graph bar based on the investment amount and years */
+  #investment-amount[value="10000"] ~ .graph-bars .graph-bar {
+    height: 20%;
+  }
+  
+  #investment-amount[value="25000"] ~ .graph-bars .graph-bar {
+    height: 40%;
+  }
+  
+  #investment-amount[value="50000"] ~ .graph-bars .graph-bar {
+    height: 60%;
+  }
+  
+  #investment-amount[value="100000"] ~ .graph-bars .graph-bar {
+    height: 80%;
+  }
+  
